@@ -83,7 +83,7 @@ Charles.from(this@MainActivity)
 ```
 
 ### Themes
-There are two built-in themes you can use to start `MatisseActivity`:
+There are two built-in themes you can use to start `CharlesActivity`:
 
 + `R.style.Charles` (light mode)
 + `R.style.CharlesDark` (dark mode)
@@ -99,14 +99,14 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
     if (requestCode == REQUEST_CODE_CHOOSE && resultCode == Activity.RESULT_OK) {
         val uris = Charles.obtainResult(data)
         val paths = Charles.obtainPathResult(data)
-        mAdapter.setData(uris, paths)
-        Log.d("uris", "$uris")
-        Log.d("paths", "$paths")
+
+        Log.d("charles", "uris: $uris")
+        Log.d("charles", "paths: $paths")
     }
 }
 ```
 ### More
-Find more details about Matisse in [wiki](https://github.com/TonnyL/Charles/wiki).
+Find more details about Charles in [wiki](https://github.com/TonnyL/Charles/wiki).
 
 ## Contribution
 Discussions and pull requests are welcomed 💖.
