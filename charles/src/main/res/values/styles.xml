@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //================== Theme Charles ==================
+
+    <style name="Charles" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/charles_primary</item>
+        <item name="colorPrimaryDark">@color/charles_primary_dark</item>
+        <item name="colorAccent">@color/charles_primary</item>
+        <item name="toolbar">@style/Charles.ToolbarStyle</item>
+        <item name="toolbar.titleColor">@color/charles_toolbar_title</item>
+        <item name="categories.dropdown.titleColor">@color/charles_categories_dropdown_title</item>
+        <item name="categories.dropdown.icon.tint">@color/charles_categories_dropdown_icon_tint
+        </item>
+        <item name="media.titleColor">@color/charles_media_title</item>
+        <item name="media.descColor">@color/charles_media_desc</item>
+        <item name="media.emptyView">@drawable/ic_empty_charles</item>
+        <item name="media.emptyView.textColor">@color/charles_empty_view_text</item>
+        <item name="media.checkView.iconColor">@color/charles_media_icon</item>
+        <item name="media.checkView.backgroundColor">@color/charles_check_view_background</item>
+        <item name="media.checkView.borderColor">@color/charles_check_view_border</item>
+        <item name="media.selected.backgroundColor">@color/charles_item_background_selected</item>
+        <item name="page.backgroundColor">@color/charles_page_background</item>
+        <item name="bottomToolbar.backgroundColor">@color/charles_bottom_toolbar_background</item>
+        <item name="bottomToolbar.progress.textColor">@color/charles_bottom_toolbar_progress_text
+        </item>
+        <item name="bottomToolbar.apply.textColor">@color/charles_bottom_toolbar_apply</item>
+        <item name="listPopupWindowStyle">@style/Charles.Popup</item>
+    </style>
+
+    <style name="Charles.ToolbarStyle">
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+    </style>
+
+    <style name="Charles.Popup" parent="Widget.AppCompat.Light.ListPopupWindow">
+        <item name="android:popupBackground">@color/charles_categories_popup_background</item>
+    </style>
+
+
+    //================== Theme Charles Dark ==================
+
+    <style name="CharlesDark" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/charles_dark_primary</item>
+        <item name="colorPrimaryDark">@color/charles_dark_primary_dark</item>
+        <item name="colorAccent">@color/charles_dark_primary</item>
+        <item name="toolbar">@style/CharlesDark.ToolbarStyle</item>
+        <item name="toolbar.titleColor">@color/charles_dark_toolbar_title</item>
+        <item name="categories.dropdown.titleColor">@color/charles_dark_categories_dropdown_title
+        </item>
+        <item name="categories.dropdown.icon.tint">
+            @color/charles_dark_categories_dropdown_icon_tint
+        </item>
+        <item name="media.titleColor">@color/charles_dark_media_title</item>
+        <item name="media.descColor">@color/charles_dark_media_desc</item>
+        <item name="media.emptyView">@drawable/ic_empty_charles_dark</item>
+        <item name="media.emptyView.textColor">@color/charles_dark_empty_view_text</item>
+        <item name="media.checkView.backgroundColor">@color/charles_dark_check_view_background
+        </item>
+        <item name="media.checkView.iconColor">@color/charles_dark_media_icon</item>
+        <item name="media.checkView.borderColor">@color/charles_dark_check_view_border</item>
+        <item name="media.selected.backgroundColor">@color/charles_dark_item_background_selected
+        </item>
+        <item name="page.backgroundColor">@color/charles_dark_page_background</item>
+        <item name="bottomToolbar.backgroundColor">@color/charles_dark_bottom_toolbar_background
+        </item>
+        <item name="bottomToolbar.progress.textColor">
+            @color/charles_dark_bottom_toolbar_progress_text
+        </item>
+        <item name="bottomToolbar.apply.textColor">@color/charles_dark_bottom_toolbar_apply</item>
+        <item name="listPopupWindowStyle">@style/CharlesDark.Popup</item>
+    </style>
+
+    <style name="CharlesDark.ToolbarStyle">
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+    </style>
+
+    <style name="CharlesDark.Popup" parent="Widget.AppCompat.Light.ListPopupWindow">
+        <item name="android:popupBackground">@color/charles_dark_categories_popup_background</item>
+    </style>
+
+</resources>

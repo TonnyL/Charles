@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="category_images">Images</string>
+    <string name="category_videos">Videos</string>
+    <string name="category_audio">Audio</string>
+    <string name="category_documents">Documents</string>
+
+    <string name="media_item_desc">%1$s • %2$s • %3$s</string>
+
+    <string name="mb">%1$.2f MB</string>
+    <string name="kb">%1$.2f KB</string>
+    <string name="select_progress_with_max">%1$d / %2$d selected</string>
+    <string name="select_progress">%1$d selected</string>
+    <string name="apply">Apply</string>
+    <string name="empty_text">No media yet</string>
+    <string name="error_over_count">You have reached max selectable</string>
+
+
+</resources>

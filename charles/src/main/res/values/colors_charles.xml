@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="charles_primary">#1E8AE8</color>
+    <color name="charles_primary_dark">#176EB9</color>
+
+    <color name="charles_toolbar_title">#FFFFFF</color>
+    <color name="charles_categories_popup_background">#FFFFFF</color>
+    <color name="charles_categories_dropdown_title">#000000</color>
+    <color name="charles_categories_dropdown_icon_tint">#000000</color>
+
+    <color name="charles_media_icon">#FFFFFF</color>
+    <color name="charles_media_title">#212121</color>
+    <color name="charles_media_desc">#757575</color>
+    <color name="charles_empty_view_text">#4D000000</color>
+    <color name="charles_check_view_background">#1E8AE8</color>
+    <color name="charles_check_view_border">#1E8AE8</color>
+
+    <color name="charles_page_background">#FFFFFF</color>
+
+    <color name="charles_bottom_toolbar_background">#FFFFFF</color>
+    <color name="charles_bottom_toolbar_progress_text">#DE000000</color>
+    <color name="charles_bottom_toolbar_apply_text">#0077D9</color>
+    <color name="charles_bottom_toolbar_apply_text_disable">#4D0077D9</color>
+
+    <color name="charles_item_background_selected">#4d3367d6</color>
+
+</resources>

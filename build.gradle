@@ -1,0 +1,43 @@
+buildscript {
+    ext.kotlin_version = '1.2.21'
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.novoda:bintray-release:0.8.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // Sdk and tools
+    configuration = [
+            compileSdkVersion: 27,
+            targetSdkVersion : 27,
+            minSdkVersion    : 19,
+            buildToolsVersion: '27.0.3'
+    ]
+    // App dependencies
+    libraries = [
+            supportLibraryVersion        : '27.0.2',
+            junitVersion                 : '4.12',
+            espressoVersion              : '3.0.1',
+            androidTestRunnerRulesVersion: '0.5',
+            glideVersion                 : '4.5.0',
+            picassoVersion               : '2.5.2'
+    ]
+}

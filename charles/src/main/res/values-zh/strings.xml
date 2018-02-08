@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="category_images">图片</string>
+    <string name="category_videos">视频</string>
+    <string name="category_audio">音频</string>
+    <string name="category_documents">文件</string>
+
+    <string name="media_item_desc">%1$s • %2$s • %3$s</string>
+
+    <string name="mb">%1$.2f 兆字节</string>
+    <string name="kb">%1$.2f 千字节</string>
+    <string name="select_progress_with_max">%1$d / %2$d 已选</string>
+    <string name="select_progress">%1$d 已选</string>
+    <string name="apply">使用</string>
+    <string name="empty_text">没有媒体文件</string>
+    <string name="error_over_count">您已经达到最大选择数量</string>
+
+</resources>

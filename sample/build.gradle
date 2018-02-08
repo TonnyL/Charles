@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+def configuration = rootProject.ext.configuration
+def libraries = rootProject.ext.libraries
+
+android {
+    compileSdkVersion configuration.compileSdkVersion
+    buildToolsVersion configuration.buildToolsVersion
+
+    defaultConfig {
+        applicationId "io.github.tonnyl.sample"
+        minSdkVersion configuration.minSdkVersion
+        targetSdkVersion configuration.targetSdkVersion
+
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':charles')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:${libraries.supportLibraryVersion}"
+    implementation "com.android.support:recyclerview-v7:${libraries.supportLibraryVersion}"
+
+    implementation "com.github.bumptech.glide:glide:${libraries.glideVersion}"
+    kapt "com.github.bumptech.glide:compiler:${libraries.glideVersion}"
+
+    implementation "com.squareup.picasso:picasso:${libraries.picassoVersion}"
+
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+
+    testImplementation "junit:junit:${libraries.junitVersion}"
+
+    androidTestImplementation "com.android.support.test:runner:${libraries.androidTestRunnerRulesVersion}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${libraries.espressoVersion}"
+}

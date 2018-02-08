@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mediaItemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:padding="@dimen/item_padding">
+
+    <FrameLayout
+        android:id="@+id/iconLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/item_media_image_width"
+            android:layout_height="@dimen/item_media_image_height"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/durationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="2dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:text="0:12"
+            tools:textColor="@android:color/black"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="@dimen/item_padding"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/iconLayout" />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="@dimen/item_padding"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@id/mediaCheckBox" />
+
+    <io.github.tonnyl.charles.ui.component.CheckView
+        android:id="@+id/mediaCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        app:color_background="?attr/media.checkView.backgroundColor"
+        app:color_border="?attr/media.checkView.borderColor"
+        app:size="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/space1"
+        android:layout_toStartOf="@id/space2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameTextView"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?attr/media.titleColor"
+            tools:text="Screenshot.png" />
+
+        <TextView
+            android:id="@+id/descTextView"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/media_item_desc"
+            android:textColor="?attr/media.descColor"
+            tools:text="Jan 1 • 2MB • PNG" />
+
+    </LinearLayout>
+
+</RelativeLayout>

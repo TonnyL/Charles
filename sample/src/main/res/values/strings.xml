@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Charles</string>
+
+    <string name="menu_theme">Theme</string>
+    <string name="menu_image_engine">Image Engine</string>
+    <string name="menu_progress_rate">Progress Rate</string>
+    <string name="menu_start">Start Charles</string>
+
+    <string name="uri">Uri: %1$s</string>
+    <string name="path">Path:%1$s</string>
+
+    <string-array name="themes">
+        <item>Charles</item>
+        <item>Charles Dark</item>
+    </string-array>
+
+    <string-array name="image_engines">
+        <item>Glide Engine</item>
+        <item>Picasso Engine</item>
+        <item>Glide V4 (Generated API) Engine</item>
+    </string-array>
+
+    <string-array name="progress_rate">
+        <item>True</item>
+        <item>False</item>
+    </string-array>
+
+</resources>

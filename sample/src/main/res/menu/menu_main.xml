@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuStart"
+        android:icon="@drawable/ic_done_white_24dp"
+        android:title="@string/menu_start"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuImageEngine"
+        android:title="@string/menu_image_engine" />
+
+    <item
+        android:id="@+id/menuTheme"
+        android:title="@string/menu_theme" />
+
+    <item
+        android:id="@+id/menuProgressRate"
+        android:title="@string/menu_progress_rate" />
+
+</menu>

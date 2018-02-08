@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CheckView">
+        <attr name="size" format="dimension" />
+        <attr name="color_border" format="color" />
+        <attr name="color_background" format="color" />
+    </declare-styleable>
+
+    <attr name="toolbar" format="reference" />
+    <attr name="toolbar.titleColor" format="reference|color" />
+    <attr name="categories.dropdown.titleColor" format="reference|color" />
+    <attr name="categories.dropdown.icon.tint" format="reference|color" />
+
+    <attr name="media.emptyView" format="reference" />
+    <attr name="media.emptyView.textColor" format="reference|color" />
+    <attr name="media.checkView.iconColor" format="reference|color" />
+    <attr name="media.checkView.backgroundColor" format="reference|color" />
+    <attr name="media.checkView.borderColor" format="reference|color" />
+    <attr name="media.selected.backgroundColor" format="reference|color" />
+    <attr name="media.titleColor" format="reference|color" />
+    <attr name="media.descColor" format="reference|color" />
+    <attr name="page.backgroundColor" format="reference|color" />
+
+    <attr name="bottomToolbar.backgroundColor" format="reference|color" />
+    <attr name="bottomToolbar.progress.textColor" format="reference|color" />
+    <attr name="bottomToolbar.apply.textColor" format="reference|color" />
+
+    <attr name="listPopupWindowStyle" format="reference" />
+
+</resources>
