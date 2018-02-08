@@ -8,6 +8,9 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Environment
 
+/**
+ * http://stackoverflow.com/a/27271131/4739220
+ */
 
 class PathUtils {
 
