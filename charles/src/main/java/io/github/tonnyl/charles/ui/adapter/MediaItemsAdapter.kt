@@ -35,8 +35,10 @@ import android.view.ViewGroup
 import android.webkit.MimeTypeMap
 import android.widget.Toast
 import io.github.tonnyl.charles.R
-import io.github.tonnyl.charles.internal.data.*
 import io.github.tonnyl.charles.internal.data.MediaFilterType
+import io.github.tonnyl.charles.internal.data.MediaItem
+import io.github.tonnyl.charles.internal.data.SelectedItemCollection
+import io.github.tonnyl.charles.internal.data.SelectionSpec
 import kotlinx.android.synthetic.main.item_media_item.view.*
 
 class MediaItemsAdapter(mediaFilterType: MediaFilterType?, selectedItemCollection: SelectedItemCollection) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -47,7 +49,7 @@ class MediaItemsAdapter(mediaFilterType: MediaFilterType?, selectedItemCollectio
     private var mContext: Context? = null
     private var mMediaItemClickListener: MediaItemsAdapter.OnMediaItemClickListener? = null
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         mCursor?.moveToPosition(position)
 
         mCursor?.let {
@@ -190,9 +192,9 @@ class MediaItemsAdapter(mediaFilterType: MediaFilterType?, selectedItemCollectio
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
-        mContext = parent?.context
-        return MediaItemViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_media_item, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        mContext = parent.context
+        return MediaItemViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_media_item, parent, false))
     }
 
     override fun getItemCount(): Int = mCursor?.count ?: 0

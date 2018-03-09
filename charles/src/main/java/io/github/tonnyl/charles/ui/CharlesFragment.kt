@@ -33,12 +33,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import io.github.tonnyl.charles.R
-import io.github.tonnyl.charles.internal.loader.*
-import io.github.tonnyl.charles.ui.adapter.MediaItemsAdapter
 import io.github.tonnyl.charles.internal.data.MediaFilterType
 import io.github.tonnyl.charles.internal.data.MediaItem
-import kotlinx.android.synthetic.main.fragment_charles.*
 import io.github.tonnyl.charles.internal.data.SelectedItemCollection
+import io.github.tonnyl.charles.internal.loader.MediaItemLoader
+import io.github.tonnyl.charles.ui.adapter.MediaItemsAdapter
+import kotlinx.android.synthetic.main.fragment_charles.*
 
 class CharlesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -102,12 +102,12 @@ class CharlesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
 
     override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> = MediaItemLoader.newInstance(context!!, mFilterType!!)
 
-    override fun onLoadFinished(loader: Loader<Cursor>?, data: Cursor?) {
+    override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
         mMediaItemsAdapter.swapCursor(data)
         emptyTextView.visibility = if (mMediaItemsAdapter.itemCount == 0) View.VISIBLE else View.GONE
     }
 
-    override fun onLoaderReset(loader: Loader<Cursor>?) {
+    override fun onLoaderReset(loader: Loader<Cursor>) {
         mMediaItemsAdapter.swapCursor(null)
     }
 

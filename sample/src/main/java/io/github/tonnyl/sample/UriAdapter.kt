@@ -36,22 +36,20 @@ class UriAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var mPaths: List<String>? = null
     private var mContext: Context? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
-        mContext = parent?.context
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        mContext = parent.context
         return UriViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_uri, parent, false))
     }
 
     override fun getItemCount(): Int = mUris?.size ?: 0
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-        holder?.let {
-            with(it as UriViewHolder) {
-                mUris?.let {
-                    itemView.uriTextView.text = mContext?.getString(R.string.uri, it[position])
-                }
-                mPaths?.let {
-                    itemView.pathTextView.text = mContext?.getString(R.string.path, it[position])
-                }
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        with(holder as UriViewHolder) {
+            mUris?.let {
+                itemView.uriTextView.text = mContext?.getString(R.string.uri, it[position])
+            }
+            mPaths?.let {
+                itemView.pathTextView.text = mContext?.getString(R.string.path, it[position])
             }
         }
     }

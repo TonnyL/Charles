@@ -37,10 +37,10 @@ class CheckView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
     private var checkDrawable: Drawable? = null
 
-    private var bitmapPaint: Paint? = null
-    private var bitmapEraser: Paint? = null
-    private var checkEraser: Paint? = null
-    private var borderPaint: Paint? = null
+    private lateinit var bitmapPaint: Paint
+    private lateinit var bitmapEraser: Paint
+    private lateinit var checkEraser: Paint
+    private lateinit var borderPaint: Paint
 
     private var drawBitmap: Bitmap? = null
     private var checkBitmap: Bitmap? = null
@@ -80,15 +80,15 @@ class CheckView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
         bitmapPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         bitmapEraser = Paint(Paint.ANTI_ALIAS_FLAG)
-        bitmapEraser?.color = 0
-        bitmapEraser?.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
+        bitmapEraser.color = 0
+        bitmapEraser.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
         checkEraser = Paint(Paint.ANTI_ALIAS_FLAG)
-        checkEraser?.color = 0
-        checkEraser?.style = Paint.Style.STROKE
-        checkEraser?.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
+        checkEraser.color = 0
+        checkEraser.style = Paint.Style.STROKE
+        checkEraser.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
         borderPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-        borderPaint?.style = Paint.Style.STROKE
-        borderPaint?.strokeWidth = dp(2f).toFloat()
+        borderPaint.style = Paint.Style.STROKE
+        borderPaint.strokeWidth = dp(2f).toFloat()
         checkDrawable = ResourcesCompat.getDrawable(resources, R.drawable.ic_checked, null)
 
         // tint the check view icon
@@ -121,7 +121,7 @@ class CheckView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         if (visibility != View.VISIBLE) {
             return
         }
-        checkEraser?.strokeWidth = size.toFloat()
+        checkEraser.strokeWidth = size.toFloat()
 
         drawBitmap?.eraseColor(0)
         var rad = (measuredWidth / 2).toFloat()
@@ -137,10 +137,10 @@ class CheckView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
             rad -= dp(2f) - dp(2f) * p
         }
 
-        borderPaint?.color = borderColor
+        borderPaint.color = borderColor
         canvas.drawCircle((measuredWidth / 2).toFloat(), (measuredHeight / 2).toFloat(), rad - dp(1f), borderPaint)
 
-        bitmapPaint?.color = bitmapColor
+        bitmapPaint.color = bitmapColor
 
         bitmapCanvas?.drawCircle((measuredWidth / 2).toFloat(), (measuredHeight / 2).toFloat(), rad, bitmapPaint)
         bitmapCanvas?.drawCircle((measuredWidth / 2).toFloat(), (measuredHeight / 2).toFloat(), rad * (1 - bitmapProgress), bitmapEraser)
@@ -181,7 +181,7 @@ class CheckView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
     fun setBorderColor(value: Int) {
         borderColor = value
-        borderPaint?.color = borderColor
+        borderPaint.color = borderColor
     }
 
     private fun cancelAnim() {
@@ -232,7 +232,9 @@ class CheckView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     }
 
     companion object {
+
         private const val BOUNCE_VALUE = 0.2f
+
     }
 
 }

@@ -33,6 +33,7 @@ class PicassoEngine : ImageEngine {
     override fun loadImage(context: Context, imageView: ImageView, uri: Uri) {
         Picasso.with(context)
                 .load(uri)
+                .fit()
                 .centerCrop()
                 .into(imageView)
     }

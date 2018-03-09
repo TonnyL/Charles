@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.21'
+    ext.kotlin_version = '1.2.30'
 
     repositories {
         google()
@@ -33,7 +33,7 @@ ext {
     ]
     // App dependencies
     libraries = [
-            supportLibraryVersion        : '27.0.2',
+            supportLibraryVersion        : '27.1.0',
             junitVersion                 : '4.12',
             espressoVersion              : '3.0.1',
             androidTestRunnerRulesVersion: '0.5',
