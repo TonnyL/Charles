@@ -1,6 +1,6 @@
 # Charles
 [![Build Status](https://travis-ci.org/TonnyL/Charles.svg?branch=master)](https://travis-ci.org/TonnyL/Charles)
-[![Download](https://api.bintray.com/packages/tonnyl/maven/charles/images/download.svg) ](https://bintray.com/tonnyl/maven/charles/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/tonnyl/maven/Charles/images/download.svg) ](https://bintray.com/tonnyl/maven/Charles/_latestVersion)
 
 Charles is a local file selector for Android. You can
 
@@ -15,31 +15,22 @@ Charles is a local file selector for Android. You can
 | ![Charles Style](./art/Charles.png) | ![Empty View](./art/CharlesDark.png) | ![Charles Empty Layout](./art/Empty.png) |
 
 ## Download
-### Gradle
-+ Add the JitPack repository to your root build.gradle file:
++ Add the JitPack repository to your build file:
 
 ```gradle
-repositories {
-    maven { url "https://jitpack.io" }
+allprojects {
+    repositories {
+        jcenter()
+    }
 }
 ```
 
-+ Add the code to your **module**'s build.gradle file:
++ Add the dependency:
 
 ```gradle
 dependencies {
     implementation 'io.github.tonnyl:charles:x.y.z'
 }
-```
-
-### Maven
-```xml
-<dependency>
-  <groupId>io.github.tonnyl</groupId>
-  <artifactId>charles</artifactId>
-  <version>x.y.z</version>
-  <type>pom</type>
-</dependency>
 ```
 
 ## ProGuard

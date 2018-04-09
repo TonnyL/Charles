@@ -1,7 +1,35 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: "com.jfrog.bintray"
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'Charles'
+    bintrayUserOrg = 'tonnyl'
+    versionName = '0.1.0-alpha5'
+
+    publishedGroupId = 'io.github.tonnyl'
+    libraryName = 'charles'
+    artifact = 'charles'
+
+    libraryDescription = 'A local multi-media selector for Android'
+
+    libraryVersion = '0.1.0-alpha5'
+
+    siteUrl = 'https://github.com/TonnyL/Charles'
+    gitUrl = 'https://github.com/TonnyL/Charles.git'
+
+    developerId = 'tonnyl'
+    developerName = 'TonnyL'
+    developerEmail = 'lizhaotailang@gmail.com'
+
+    licenseName = 'MIT'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
+def configuration = rootProject.ext.configuration
+def libraries = rootProject.ext.libraries
 
 android {
     compileSdkVersion configuration.compileSdkVersion
@@ -49,28 +77,4 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-core:${libraries.espressoVersion}"
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-// upload to jcenter
-// ./gradlew bintrayUpload
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-
-    configurations = ['archives']
-    pkg {
-        repo = 'maven'
-        name = 'charles'
-        websiteUrl = 'https://github.com/TonnyL/Charles'
-        vcsUrl = 'https://github.com/TonnyL/Charles.git'
-        licenses = ['MIT']
-        userOrg = 'tonnyl'
-        publish = true
-
-        version {
-            name = '0.1.0-alpha5'
-            desc = 'A local multi-media selector for Android'
-        }
-    }
-}
+apply from: '../deploy.gradle'
