@@ -1,14 +1,14 @@
 buildscript {
-    ext.kotlin_version = '1.2.30'
+    ext.kotlin_version = '1.2.31'
 
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.novoda:bintray-release:0.8.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
     }
 }
 
@@ -33,11 +33,11 @@ ext {
     ]
     // App dependencies
     libraries = [
-            supportLibraryVersion        : '27.1.0',
+            supportLibraryVersion        : '27.1.1',
             junitVersion                 : '4.12',
             espressoVersion              : '3.0.1',
             androidTestRunnerRulesVersion: '0.5',
-            glideVersion                 : '4.5.0',
+            glideVersion                 : '4.6.1',
             picassoVersion               : '2.5.2'
     ]
 }

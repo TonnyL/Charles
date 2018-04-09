@@ -1,10 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.novoda.bintray-release'
-
-def configuration = rootProject.ext.configuration
-def libraries = rootProject.ext.libraries
+apply plugin: "com.jfrog.bintray"
 
 android {
     compileSdkVersion configuration.compileSdkVersion
@@ -52,19 +49,28 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-core:${libraries.espressoVersion}"
 }
 
-// Disable creating javadocs
-tasks.withType(Javadoc) {
-    enabled = false
-}
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-// Type these code in a single line to upload the library to jfrog.
-// jcenter configuration for novoda's bintray-release
-// $ ./gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
-publish {
-    userOrg = 'tonnyl'
-    groupId = 'io.github.tonnyl'
-    artifactId = 'charles'
-    publishVersion = '0.1.0-alpha'
-    desc = 'A local multi-media selector for Android'
-    website = 'https://github.com/TonnyL/Charles'
+// upload to jcenter
+// ./gradlew bintrayUpload
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = 'charles'
+        websiteUrl = 'https://github.com/TonnyL/Charles'
+        vcsUrl = 'https://github.com/TonnyL/Charles.git'
+        licenses = ['MIT']
+        userOrg = 'tonnyl'
+        publish = true
+
+        version {
+            name = '0.1.0-alpha5'
+            desc = 'A local multi-media selector for Android'
+        }
+    }
 }

@@ -28,4 +28,33 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomCharlesTheme" parent="Charles">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="toolbar">@style/Custom.Charles.ToolbarStyle</item>
+        <item name="toolbar.titleColor">@color/colorAccent</item>
+        <item name="categories.dropdown.titleColor">@color/charles_categories_dropdown_title</item>
+        <item name="categories.dropdown.icon.tint">@color/charles_categories_dropdown_icon_tint
+        </item>
+        <item name="media.titleColor">@color/charles_media_title</item>
+        <item name="media.descColor">@color/charles_media_desc</item>
+        <item name="media.emptyView">@drawable/ic_empty_charles</item>
+        <item name="media.emptyView.textColor">@color/colorAccent</item>
+        <item name="media.checkView.iconColor">@color/colorAccent</item>
+        <item name="media.checkView.backgroundColor">@color/charles_check_view_background</item>
+        <item name="media.checkView.borderColor">@color/charles_check_view_border</item>
+        <item name="media.selected.backgroundColor">@color/colorAccent</item>
+        <item name="page.backgroundColor">@color/charles_page_background</item>
+        <item name="bottomToolbar.backgroundColor">@color/charles_bottom_toolbar_background</item>
+        <item name="bottomToolbar.progress.textColor">@color/charles_bottom_toolbar_progress_text
+        </item>
+        <item name="bottomToolbar.apply.textColor">@color/colorAccent</item>
+        <item name="listPopupWindowStyle">@style/Charles.Popup</item>
+    </style>
+
+    <style name="Custom.Charles.ToolbarStyle" parent="Charles.ToolbarStyle">
+
+    </style>
+
 </resources>

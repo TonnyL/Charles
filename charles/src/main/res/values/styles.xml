@@ -50,8 +50,8 @@
         <item name="listPopupWindowStyle">@style/Charles.Popup</item>
     </style>
 
-    <style name="Charles.ToolbarStyle">
-        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+    <style name="Charles.ToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
     </style>
 
     <style name="Charles.Popup" parent="Widget.AppCompat.Light.ListPopupWindow">
@@ -92,8 +92,8 @@
         <item name="listPopupWindowStyle">@style/CharlesDark.Popup</item>
     </style>
 
-    <style name="CharlesDark.ToolbarStyle">
-        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+    <style name="CharlesDark.ToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
     </style>
 
     <style name="CharlesDark.Popup" parent="Widget.AppCompat.Light.ListPopupWindow">

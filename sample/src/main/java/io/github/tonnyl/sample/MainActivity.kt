@@ -139,8 +139,11 @@ class MainActivity : AppCompatActivity() {
                         0 -> {
                             R.style.Charles
                         }
-                        else -> {
+                        1 -> {
                             R.style.CharlesDark
+                        }
+                        else -> {
+                            R.style.CustomCharlesTheme
                         }
                     }
                 })
