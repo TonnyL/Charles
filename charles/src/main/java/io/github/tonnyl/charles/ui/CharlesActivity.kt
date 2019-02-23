@@ -24,15 +24,18 @@ package io.github.tonnyl.charles.ui
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.ListPopupWindow
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.ListPopupWindow
 import io.github.tonnyl.charles.R
+import io.github.tonnyl.charles.internal.data.Category
+import io.github.tonnyl.charles.internal.data.MediaFilterType
+import io.github.tonnyl.charles.internal.data.SelectedItemCollection
+import io.github.tonnyl.charles.internal.data.SelectionSpec
 import io.github.tonnyl.charles.ui.adapter.CategoriesAdapter
 import kotlinx.android.synthetic.main.activity_charles.*
-import android.graphics.PorterDuff
-import io.github.tonnyl.charles.internal.data.*
 
 /**
  * Created by lizhaotailang on 30/01/2018.

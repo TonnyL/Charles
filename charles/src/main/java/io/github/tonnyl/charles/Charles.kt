@@ -25,7 +25,7 @@ package io.github.tonnyl.charles
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import io.github.tonnyl.charles.ui.CharlesActivity
 import java.lang.ref.WeakReference
 

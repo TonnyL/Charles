@@ -26,11 +26,10 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import android.support.v4.content.res.ResourcesCompat
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Checkable
-
+import androidx.core.content.res.ResourcesCompat
 import io.github.tonnyl.charles.R
 
 class CheckView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : View(context, attrs, defStyle), Checkable {

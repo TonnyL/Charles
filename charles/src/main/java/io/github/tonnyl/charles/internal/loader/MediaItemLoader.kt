@@ -25,8 +25,8 @@ package io.github.tonnyl.charles.internal.loader
 import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
-import android.support.v4.content.CursorLoader
 import android.webkit.MimeTypeMap
+import androidx.loader.content.CursorLoader
 import io.github.tonnyl.charles.internal.data.MediaFilterType
 
 class MediaItemLoader private constructor(
