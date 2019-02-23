@@ -26,14 +26,14 @@ import android.content.Context
 import android.database.Cursor
 import android.graphics.Color
 import android.graphics.PorterDuff
-import android.support.v4.content.res.ResourcesCompat
-import android.support.v7.widget.RecyclerView
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
+import androidx.recyclerview.widget.RecyclerView
 import io.github.tonnyl.charles.R
 import io.github.tonnyl.charles.internal.data.MediaFilterType
 import io.github.tonnyl.charles.internal.data.MediaItem

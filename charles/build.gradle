@@ -1,45 +1,17 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'Charles'
-    bintrayUserOrg = 'tonnyl'
-    versionName = '0.1.0-alpha5'
-
-    publishedGroupId = 'io.github.tonnyl'
-    libraryName = 'charles'
-    artifact = 'charles'
-
-    libraryDescription = 'A local multi-media selector for Android'
-
-    libraryVersion = '0.1.0-alpha5'
-
-    siteUrl = 'https://github.com/TonnyL/Charles'
-    gitUrl = 'https://github.com/TonnyL/Charles.git'
-
-    developerId = 'tonnyl'
-    developerName = 'TonnyL'
-    developerEmail = 'lizhaotailang@gmail.com'
-
-    licenseName = 'MIT'
-    licenseUrl = 'https://opensource.org/licenses/MIT'
-    allLicenses = ["MIT"]
-}
-
-def configuration = rootProject.ext.configuration
-def libraries = rootProject.ext.libraries
+apply plugin: "guru.stefma.bintrayrelease"
 
 android {
-    compileSdkVersion configuration.compileSdkVersion
-    buildToolsVersion configuration.buildToolsVersion
+    compileSdkVersion versions.compile_sdk_version
+    buildToolsVersion versions.build_tools_version
 
     defaultConfig {
-        minSdkVersion configuration.minSdkVersion
-        targetSdkVersion configuration.targetSdkVersion
+        minSdkVersion versions.min_sdk_version
+        targetSdkVersion versions.target_sdk_version
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -53,10 +25,6 @@ android {
         abortOnError false
     }
 
-    kapt {
-        correctErrorTypes = true
-    }
-
 }
 
 androidExtensions {
@@ -66,15 +34,25 @@ androidExtensions {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "com.android.support:appcompat-v7:${libraries.supportLibraryVersion}"
-    implementation "com.android.support:recyclerview-v7:${libraries.supportLibraryVersion}"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:${versions.appcompat}"
+    implementation "androidx.recyclerview:recyclerview:${versions.recyclerview}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
-    compileOnly "com.github.bumptech.glide:glide:${libraries.glideVersion}"
-    compileOnly "com.squareup.picasso:picasso:${libraries.picassoVersion}"
+    compileOnly "com.github.bumptech.glide:glide:${versions.glide}"
+    compileOnly "com.squareup.picasso:picasso:${versions.picasso}"
 
-    androidTestImplementation "com.android.support.test:runner:${libraries.androidTestRunnerRulesVersion}"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:${libraries.espressoVersion}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.ext_junit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 }
 
-apply from: '../deploy.gradle'
+// ./gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+version = "0.1.0-alpha6"
+group = "io.github.tonnyl"
+androidArtifact {
+    artifactId = "Charles"
+}
+publish {
+    userOrg = "tonnyl"
+    desc = "A local multi-media selector for Android"
+    website = "https://github.com/TonnyL/Charles"
+}

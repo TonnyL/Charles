@@ -3,21 +3,18 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-def configuration = rootProject.ext.configuration
-def libraries = rootProject.ext.libraries
-
 android {
-    compileSdkVersion configuration.compileSdkVersion
-    buildToolsVersion configuration.buildToolsVersion
+    compileSdkVersion versions.compile_sdk_version
+    buildToolsVersion versions.build_tools_version
 
     defaultConfig {
         applicationId "io.github.tonnyl.sample"
-        minSdkVersion configuration.minSdkVersion
-        targetSdkVersion configuration.targetSdkVersion
+        minSdkVersion versions.min_sdk_version
+        targetSdkVersion versions.target_sdk_version
 
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -32,20 +29,20 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':charles')
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.android.support:appcompat-v7:${libraries.supportLibraryVersion}"
-    implementation "com.android.support:recyclerview-v7:${libraries.supportLibraryVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    implementation "androidx.appcompat:appcompat:${versions.appcompat}"
+    implementation "androidx.recyclerview:recyclerview:${versions.recyclerview}"
 
-    implementation "com.github.bumptech.glide:glide:${libraries.glideVersion}"
-    kapt "com.github.bumptech.glide:compiler:${libraries.glideVersion}"
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    kapt "com.github.bumptech.glide:compiler:${versions.glide}"
 
-    implementation "com.squareup.picasso:picasso:${libraries.picassoVersion}"
+    implementation "com.squareup.picasso:picasso:${versions.picasso}"
 
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rxjava2}"
 
-    testImplementation "junit:junit:${libraries.junitVersion}"
+    testImplementation "junit:junit:${versions.junit}"
 
-    androidTestImplementation "com.android.support.test:runner:${libraries.androidTestRunnerRulesVersion}"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:${libraries.espressoVersion}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.ext_junit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 }
